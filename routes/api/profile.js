@@ -22,10 +22,10 @@ router.post('/evaluate', function(req, res) {
 			function() {return true}
 		],
 		function(profiles, objects, permissions) {
-			res.json({result: 'Returning evaluation of : ' + req.params.profile_id});
+			res.json({result: 'Returning evaluation of profile', req: req.params});
 
 		}).catch(function(err) {
-			res.json({result: 'Returning evaluation of : ' + req.params.profile_id, err: err});
+			res.json({result: 'Error in evaluation of profile', req: req.params, err: err});
 		})
 		.done(function() {
 			console.log('Done Evaluating Profile');
