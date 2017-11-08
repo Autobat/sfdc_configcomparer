@@ -2,6 +2,8 @@ var express 			= require('express');
 var q 					= require('q');
 var router 				= express.Router();
 
+var parseString 		= require('xml2js').parseString;
+
 /************************************************************************************************
  *
  */
@@ -15,6 +17,8 @@ router.get('/', function(req, res) {
  */
 router.post('/evaluate', function(req, res) {
 	console.log('Someone is POSTing profiles to evaluate');
+
+	console.log(req.body);
 
 	return q.spread([
 			function() {return true},
